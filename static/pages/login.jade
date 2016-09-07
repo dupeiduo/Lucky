@@ -1,0 +1,8 @@
+extends ../layout  
+block content 
+  form(action='/singin' method='POST')
+    input(type='text' value='' name='account' placeholder='请输入用户名')
+    br
+    input(type='password' value='' name='password' placeholder='请输入用密码')
+    br
+    input(type='submit' value='登录' )
