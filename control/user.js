@@ -4,7 +4,9 @@ const formidable = require('formidable'),
   db = require("../config/database");
 
 exports.login = function (req, res) {
-  res.render('login',{});
+  res.render('pages/login', {
+    title: 'Login page'
+  });
 }
 exports.siginout = function(req, res) {
   req.session.user = null;
@@ -24,14 +26,17 @@ exports.singin = function (req, res) {
       // var user = {user: account};
       // req.session.user = user;
       console.log(results[0]);
-      res.render('home', {
+      res.render('pages/home', {
+        title: 'Hi,' + results[0].name,
         name: results[0].name,
         email: results[0].email,
         phone: results[0].phone,
         account: results[0].account
       });
     } else {
-      res.redirect('/login');
+      res.redirect('/login', {
+        title: 'Login page'
+      });
     }
   });
 }
