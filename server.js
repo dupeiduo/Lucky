@@ -6,7 +6,6 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   index = require('./control/index'),
   user = require('./control/user'),
-  home = require('./control/home'),
   path = require('path'),
   fs = require('fs');
 
