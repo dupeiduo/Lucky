@@ -4,41 +4,26 @@ var port = 8888;
 const express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
+  index = require('./control/index'),
   user = require('./control/user'),
   home = require('./control/home'),
   path = require('path'),
   fs = require('fs');
 
-app.set('views','./static/pages');
+app.set('views','./static');
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname,'./static')));
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-// app.use(cookieParser());
-// app.use(express.session({
-//   resave: true, 
-//   saveUninitialized: false,
-//   secret: 'appuser'
-// }));
-// app.use(function(req,res,next){
-//   if (!req.session.user) {
-//     if(req.url=="/login"){
-//       next();
-//     }
-//     else
-//     {
-//       res.redirect('/login');
-//     }
-//   } else if (req.session.user) {
-//     next();
-//   }
-// });
 
-app.get('/', home.init);
-app.get('/index', home.init);
+app.get('/', index.init);
+app.get('/index', index.init);
 
 app.get('/login', user.login);
 
+// GET
 // app.get('/singin', user.singin);
+// POST
+app.post('/singin', urlencodedParser, user.singin);
 
 app.get('/siginout', user.siginout);
 app.get('*', 
@@ -48,7 +33,6 @@ app.get('*',
 
 // TODO: add login vertify
 
-app.post('/singin', urlencodedParser, user.singin);
 var server = app.listen(port, function () {
 
   var host = server.address().address;
