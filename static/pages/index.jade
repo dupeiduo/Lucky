@@ -1,6 +1,8 @@
 extends ../layout  
 block content  
   h1 #{contentTitle} 
-  p #{description}  
+  p #{description} 
+  a(href='/login') login
+  br
   each img in imgs  
       img(src="images/#{img}" class="row-img")
