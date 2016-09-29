@@ -1,0 +1,18 @@
+extends ../layout  
+block content 
+  form(action='/regist' method='POST' class='login-form regist-form')
+    div(class='input-group')
+      span(class='input-group-addon') 邮箱：
+      input(type='email' name='email' placeholder='请输入邮箱' class='form-control')
+    div(class='input-group')
+      span(class='input-group-addon') 用户名：
+      input(type='text' name='account' placeholder='请输入用户名' class='form-control')
+    div(class='input-group')
+      span(class='input-group-addon') 密&nbsp;&nbsp;&nbsp;码：
+      input(type='password' name='password' placeholder='请输入密码' class='form-control')
+    div(class='input-group')
+      span(class='input-group-addon') 确认密码：
+      input(type='password' name='pwdconfirm' placeholder='请确认密码' class='form-control')
+      br
+    a(class='btn btn-primary login-submit' href='/login') 登陆
+    input(type='submit' value='注册' class='btn btn-primary regist-submit')
