@@ -1,8 +1,45 @@
 h1 {
   color: red;
 }
+.login-txt {
+  position: absolute;
+  top: 30px;
+  right: 80px;
+}
+.regist-txt {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
 .row-img {
-  width:140px;
-  height:140px;
+  width:180px;
+  height:180px;
   margin:5px
+}
+.login-form {
+  position: fixed;
+  width: 360px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -180px; 
+  padding: 30px 50px;
+  background: #eee; 
+  border-radius: 5px;
+}
+.regist-form {
+  width: 400px;
+  height: 300px;
+  margin: -150px 0 0 -200px; 
+}
+.login-form .input-group {
+  width: 260px;
+  margin: 10px;
+}
+.login-form .input-group-addon {
+  width: 95px;
+}
+.login-submit, .regist-submit {
+  float: right;
+  margin: 20px 10px; 
 }

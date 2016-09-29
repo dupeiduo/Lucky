@@ -22,9 +22,13 @@
     "express": "^4.14.0",
     "formidable": "^1.0.17",
     "multer": "^1.2.0",
-    "mysql": "^2.11.1"
+    "mysql": "^2.11.1",
+    "nodemailer": "^2.6.4"
   },
   "devDependencies": {
-    "jade": "^1.11.0"
+    "cookie-session": "^2.0.0-alpha.1",
+    "express-session": "^1.14.1",
+    "jade": "^1.11.0",
+    "memcached": "^2.2.2"
   }
 }
