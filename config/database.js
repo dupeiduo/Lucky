@@ -24,7 +24,7 @@ DB.prototype.doSelect = function(sql, callback) {
   var self = this;
   self.client.query(  
     sql,  
-    function selectCb(err, results) {  
+    function (err, results) {  
       if (err) {  
         throw err;  
       }  

@@ -1,6 +1,7 @@
 'user strict'
 
-var port = 8888;
+var port = 8888,
+  sslport = 8000;
 const express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
@@ -11,7 +12,12 @@ const express = require('express'),
   fs = require('fs'),
   session = require('express-session'),
   cookieParser = require('cookie-parser'),
-  cookieSession = require('cookie-session');
+  cookieSession = require('cookie-session'),
+  https = require('https'),
+  options = {
+    key: fs.readFileSync('pem/rsa_private_key.pem'),
+    cert: fs.readFileSync('pem/cacert.pem')
+  };
 
 app.set('views','./static');
 app.set('view engine', 'jade');
@@ -52,10 +58,14 @@ app.get('*', function(req, res){
   res.render('404',{});
 });
 
-var server = app.listen(port, function () {
+// var server = app.listen(port, function () {
 
-  var host = server.address().address;
-  var port = server.address().port;
+//   var host = server.address().address;
+//   var port = server.address().port;
 
-  console.log("网址访问路径 http://127.0.0.1:%s", port);
-});
+//   console.log("网址访问路径 http://127.0.0.1:%s", port);
+// });
+
+https.createServer(options, (req, res) => {
+  app.handle( req, res );
+}).listen(sslport);
