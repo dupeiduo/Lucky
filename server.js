@@ -58,13 +58,13 @@ app.get('*', function(req, res){
   res.render('404',{});
 });
 
-// var server = app.listen(port, function () {
+var server = app.listen(port, function () {
 
-//   var host = server.address().address;
-//   var port = server.address().port;
+  var host = server.address().address;
+  var port = server.address().port;
 
-//   console.log("网址访问路径 http://127.0.0.1:%s", port);
-// });
+  console.log("网址访问路径 http://127.0.0.1:%s", port);
+});
 
 https.createServer(options, (req, res) => {
   app.handle( req, res );

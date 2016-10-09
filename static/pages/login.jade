@@ -3,10 +3,10 @@ block content
   form(action='/login' method='POST' class='login-form')
     div(class='input-group')
       span(class='input-group-addon') 用户名：
-      input(type='text' name='account' placeholder='请输入用户名' class='form-control')
+      input(type='text' name='account' placeholder='请输入用户名' class='form-control' required='required')
     div(class='input-group')
       span(class='input-group-addon') 密&nbsp;&nbsp;&nbsp;码：
-      input(type='password' name='password' placeholder='请输入密码' class='form-control')
+      input(type='password' name='password' placeholder='请输入密码' class='form-control' required='required')
       br
     input(type='submit' value='登录' class='btn btn-primary login-submit')
     a(class='btn btn-primary login-submit' href='/regist') 注册
