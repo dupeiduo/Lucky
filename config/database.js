@@ -17,8 +17,19 @@ DB.prototype.connect = function() {
     password: '123456',  
   });  
 
-  this.client.connect();
+  this.client.connect(handleError);
+  this.client.on('error' ,handleError);
   this.client.query("use " + this.DATABASE);
+
+  function handleError (err) {
+    if (err) {
+      if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+        this.connect();
+      } else {
+        console.error(err.stack || err);
+      }
+    }
+  }
 }
 DB.prototype.doSelect = function(sql, callback) {
   var self = this;
