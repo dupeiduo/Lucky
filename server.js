@@ -26,6 +26,9 @@ app.use(session({
   resave: true, 
   saveUninitialized: false, 
   secret: 'userLogin',
+  // store: new MongoStore({
+  //   db: config.db_name
+  // }),
   key: 'userLogin',
   cookie: { maxAge: 2 * 3600 * 1000}
 }));

@@ -1,6 +1,6 @@
 # Lucky
 My nodejs lucky start
-# 使用说明（Getting start）
+# 使用说明（Getting Started）
 1. **进入项目目录安装（Install in program folder）**
  * `npm init`
 
@@ -13,7 +13,7 @@ My nodejs lucky start
 3. **插件（Plugins）**
  * 发送邮件(Mail sender)
  * 连接数据库(Database basic opreate)
- * Session
+ * MD5
  
 
 
