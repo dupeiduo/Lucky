@@ -2,7 +2,7 @@
 My nodejs lucky start
 # 使用说明（Getting Started）
 1. **进入项目目录安装（Install in program folder）**
- * `npm init`
+ * `npm install`
 
 2. **实现的功能（The functions）** 
  * 首页（Home page）
