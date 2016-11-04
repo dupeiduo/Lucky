@@ -21,8 +21,7 @@ exports.init = function (req, res) {
     imgs: files,
     isLogin: isLogin,
     userName: userName
-  });
-  console.log(isLogin + userName); 
+  }); 
 }
 exports.home = function (req, res) {
   res.render('pages/home', {
