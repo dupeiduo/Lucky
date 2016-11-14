@@ -1,6 +1,7 @@
 'user strict'
 const fs = require('fs');
 var user = require('./user'),
+  log = require('../config/log').log,
   userInfo = [];
 user.emitter.on('userInfo', function(userinfo) {
   userInfo = userinfo;

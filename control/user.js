@@ -2,6 +2,7 @@
 const formidable = require('formidable'),
   fs = require("fs"),
   db = require("../config/database"),
+  log = require('../config/log').log,
   index = require('./index'),
   events = require('events'), 
   mail = require("../config/mailer"),
@@ -38,7 +39,7 @@ exports.login = function (req, res) {
       req.session.user = user;
       emitter.emit('userInfo', results[0]);
       res.redirect('/home');
-      console.log(results[0].email);
+      log(results[0].email);
       // mail.send({
       //   from: '"Du Peiduo" <du_peiduo@126.com>', 
       //   to: results[0].email, 
@@ -63,10 +64,10 @@ exports.regist = function(req, res) {
       var user = { user: account, password: pwd };
       req.session.user = user;
       res.redirect('/home');
-      console.log(results.insertId);
+      log(results.insertId);
     });
   } else {
-    console.log('err');
+    log('err');
   }
 }
 var selectUserInfo = function(account, pwd, callback) {
@@ -77,7 +78,7 @@ var selectUserInfo = function(account, pwd, callback) {
     _db.doSelect( strSql,callback );
     _db = null; 
   } catch(err) {
-    console.log(err.error_msg);
+    log(err.error_msg);
   }
 }
 var insertUser = function(account, password, email, callback) {
@@ -93,6 +94,6 @@ var insertUser = function(account, password, email, callback) {
     );
     _db = null; 
   } catch(err) {
-    console.log('err:' + err.error_msg);
+    log('err:' + err.error_msg);
   }
 }

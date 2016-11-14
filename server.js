@@ -4,6 +4,7 @@ var port = 8888,
   sslport = 8000;
 const express = require('express'),
   app = express(),
+  log = require('./config/log').log,
   bodyParser = require('body-parser'),
   urlencodedParser = bodyParser.urlencoded({ extended: false }),
   index = require('./control/index'),
@@ -66,7 +67,7 @@ var server = app.listen(port, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log("网址访问路径 http://127.0.0.1:%s", port);
+  log("网址访问路径 http://127.0.0.1:" + port);
 });
 
 https.createServer(options, (req, res) => {
