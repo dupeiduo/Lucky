@@ -36,16 +36,15 @@ app.use(session({
 
 
 app.use(express.static(path.join(__dirname,'./static')));
+app.use(user.authenticate);
 
 app.get('/', index.init);
 app.get('/index', index.init);
 
-app.use(user.authenticate);
 
 app.get('/login', function (req, res) {
   res.render('pages/login', { title: 'Login page' });
 });
-
 app.post('/login', urlencodedParser, user.login);
 
 app.get('/logout', user.logout);
@@ -53,7 +52,6 @@ app.get('/logout', user.logout);
 app.get('/regist', function (req, res) {
   res.render('pages/regist', { title: 'Regist page' });
 });
-
 app.post('/regist', urlencodedParser, user.regist);
 
 app.get('/home', index.home);
@@ -63,7 +61,6 @@ app.get('*', function(req, res){
 });
 
 var server = app.listen(port, function () {
-
   var host = server.address().address;
   var port = server.address().port;
 

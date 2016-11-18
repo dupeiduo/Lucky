@@ -25,6 +25,7 @@ exports.init = function (req, res) {
   }); 
 }
 exports.home = function (req, res) {
+  log(userInfo);
   res.render('pages/home', {
     title: 'Hi,' + userInfo.name,
     email: userInfo.email,
