@@ -1,12 +1,12 @@
 'user strict'
 const formidable = require('formidable'),
   fs = require("fs"),
-  db = require("../config/database"),
-  log = require('../config/log').log,
+  db = require("../plugins/database"),
+  log = require('../plugins/log').log,
   index = require('./index'),
   events = require('events'), 
-  mail = require("../config/mailer"),
-  library = require("../config/common"),
+  mail = require("../plugins/mailer"),
+  library = require("../plugins/common"),
   emitter = new events.EventEmitter();
 
 exports.emitter = emitter;
