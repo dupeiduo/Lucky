@@ -1,16 +1,17 @@
-var nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer'),
+  config = require('../config').config;
 
 var transporter = nodemailer.createTransport({
-  service: "126", 
+  service: config.mail_server, 
   auth: {
-    user: 'du_peiduo@126.com',
-    pass: 'mail126'
+    user: config.mail_account,
+    pass: config.mail_pwd
   }
 });
 
 exports.send = function(mailOptions) {
   mailOptions = mailOptions ? mailOptions : {
-    from: '"Du Peiduo" <du_peiduo@126.com>', // login user must equel to this user
+    from: '"Du Peiduo" <'+ config.mail_account +'>', // login user must equel to this user
     to: 'du_peiduo@163.com', 
     subject: 'Title Nodejs Send',
     text: 'Some simple words.', 
