@@ -1,5 +1,6 @@
 'use strict'
-var mysql = require('mysql');  
+var mysql = require('mysql'),
+  config = require('../config').config;  
 
 function DB() {
   if (this instanceof DB) {
@@ -11,10 +12,10 @@ function DB() {
   }
 }
 DB.prototype.connect = function() {
-  this.DATABASE = 'philip';
+  this.DATABASE = config.db_name;
   this.client = mysql.createConnection({  
-    user: 'root',  
-    password: '123456',  
+    user: config.db_user,  
+    password: config.db_pwd,  
   });  
 
   this.client.connect(handleError);

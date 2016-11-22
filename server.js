@@ -1,9 +1,8 @@
 'user strict'
 
-var port = 8888,
-  sslport = 8000;
-const express = require('express'),
+var express = require('express'),
   app = express(),
+  config = require('./config').config,
   log = require('./plugins/log').log,
   bodyParser = require('body-parser'),
   urlencodedParser = bodyParser.urlencoded({ extended: false }),
@@ -60,7 +59,7 @@ app.get('*', function(req, res){
   res.render('404',{});
 });
 
-var server = app.listen(port, function () {
+var server = app.listen(config.server_port, function () {
   var host = server.address().address;
   var port = server.address().port;
 
@@ -69,4 +68,4 @@ var server = app.listen(port, function () {
 
 https.createServer(options, (req, res) => {
   app.handle( req, res );
-}).listen(sslport);
+}).listen(config.server_ssl_port);

@@ -1,3 +1,4 @@
+'use strict'
 var crypto = require('crypto');
 
 exports.md5 = function (str) {

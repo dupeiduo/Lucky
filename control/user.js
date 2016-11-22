@@ -40,13 +40,13 @@ exports.login = function (req, res) {
       emitter.emit('userInfo', results[0]);
       res.redirect('/home');
       log(results[0].email);
-      // mail.send({
-      //   from: '"Du Peiduo" <du_peiduo@126.com>', 
-      //   to: results[0].email, 
-      //   subject: 'Login success',
-      //   text: 'Some simple words.', 
-      //   html: '<b>The main content of the mail</b>'
-      // });
+      mail.send({
+        from: '"Du Peiduo" <du_peiduo@126.com>', 
+        to: results[0].email, 
+        subject: 'Login success',
+        text: 'Some simple words.', 
+        html: '<b>The main content of the mail</b>'
+      });
     } else {
       res.redirect('/login');
     }

@@ -1,4 +1,4 @@
-'user strict'
+'use strict'
 
 // may write in files in the future
 exports.log = function(msg) {
