@@ -67,7 +67,7 @@ exports.regist = function(req, res) {
       log(results.insertId);
     });
   } else {
-    log('err');
+    log('regist err');
   }
 }
 var selectUserInfo = function(account, pwd, callback) {
