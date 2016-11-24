@@ -1,8 +1,9 @@
 'user strict'
 const fs = require('fs');
 var user = require('./user'),
-  log = require('../plugins/log').log,
+  logger = require('../plugins/log').logger,
   userInfo = [];
+
 user.emitter.on('userInfo', function(userinfo) {
   userInfo = userinfo;
 });
@@ -13,6 +14,12 @@ exports.init = function (req, res) {
   } else {
     var isLogin = false;
     var userName = '';
+    logger.trace('trace');
+    logger.debug('debug');
+    logger.info('info');
+    logger.warn('warn');
+    logger.error('error');
+    logger.fatal('fatal');
   }
   var files = fs.readdirSync('./static/images');
   res.render('pages/index',{
