@@ -29,6 +29,7 @@
     "cookie-session": "^2.0.0-alpha.1",
     "express-session": "^1.14.1",
     "jade": "^1.11.0",
+    "log4js": "^1.0.1",
     "memcached": "^2.2.2"
   }
 }
