@@ -67,7 +67,12 @@ exports.regist = function(req, res) {
       logger.debug(results.insertId);
     });
   } else {
-    logger.error('regist err');
+    res.render('pages/regist', {
+      email: email,
+      account: account,
+      pwd: pwd,
+      msg: "passwords don't match! "
+    });
   }
 }
 var selectUserInfo = function(account, pwd, callback) {

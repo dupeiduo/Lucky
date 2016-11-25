@@ -49,7 +49,7 @@ app.post('/login', urlencodedParser, user.login);
 app.get('/logout', user.logout);
 
 app.get('/regist', function (req, res) {
-  res.render('pages/regist', { title: 'Regist page' });
+  res.render('pages/regist', { email: '',account: '',pwd: '' ,title: 'Regist page' });
 });
 app.post('/regist', urlencodedParser, user.regist);
 
