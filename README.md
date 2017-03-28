@@ -5,6 +5,8 @@ My nodejs lucky start
  * `npm install`
  * 数据库为mysql，备份文件 Dump20160929.sql，可导入使用
  * 请在config 中修改配置
+ * 进入项目目录 
+ * node server.js
 
 2. **实现的功能（The functions）** 
  * 首页（Home page）
