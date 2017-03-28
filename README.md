@@ -3,6 +3,8 @@ My nodejs lucky start
 # 使用说明（Getting Started）
 1. **进入项目目录安装（Install in program folder）**
  * `npm install`
+ * 数据库为mysql，备份文件 Dump20160929.sql，可导入使用
+ * 请在config 中修改配置
 
 2. **实现的功能（The functions）** 
  * 首页（Home page）
