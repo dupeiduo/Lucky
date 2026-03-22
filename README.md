@@ -1,5 +1,5 @@
-# Lucky
-My nodejs lucky start
+# 文章发布，编辑与浏览
+SSR 后端渲染，后端为Nodejs 数据库MySQL ，前端Vue，
 # 使用说明（Getting Started）
 1. **进入项目目录安装（Install in program folder）**
  * `npm install`
@@ -13,6 +13,9 @@ My nodejs lucky start
  * 登陆页（Login page）
  * 注册页（Regist page）
  * 登录成功页面（Logged in page）
+ * 写文章功能、编辑文章功能
+ * 展示文章列表
+ * 展示文章详情
   
 3. **插件（Plugins）**
  * 发送邮件(Mail sender)
